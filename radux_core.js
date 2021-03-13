@@ -41,15 +41,14 @@ const reducer = (state = intialState, action) => {
       return state;
   }
 };
-//Create Store
+//Create Store with reducer(required) and middleware(optinal)
 const store = createStore(reducer, applyMiddleware(logger));
-
-//Get state value
 
 //get updated state value
 const unsubscribe = store.subscribe(() => {});
 
 //dispatch method with passing action
+//this work in sync menner one call complete after that called
 store.dispatch(decrementCount());
 store.dispatch(incrementCount());
 store.dispatch(decrementCount());
